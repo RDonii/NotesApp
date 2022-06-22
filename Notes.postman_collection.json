@@ -1,0 +1,265 @@
+{
+	"info": {
+		"_postman_id": "13c63176-688a-4a7d-acd8-7b1cf54603b9",
+		"name": "Notes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21294080"
+	},
+	"item": [
+		{
+			"name": "public",
+			"item": [
+				{
+					"name": "List public notes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_v1API}}/notes/public",
+							"host": [
+								"{{base_url_v1API}}"
+							],
+							"path": [
+								"notes",
+								"public"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"doni@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_v1API}}/login/",
+							"host": [
+								"{{base_url_v1API}}"
+							],
+							"path": [
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"foo@gmail.com\",\r\n    \"name\": \"foo\",\r\n    \"password\": \"12345678\",\r\n    \"password_confirm\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_v1API}}/register",
+							"host": [
+								"{{base_url_v1API}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth required",
+			"item": [
+				{
+					"name": "List owned notes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_v1API}}/notes/owned/",
+							"host": [
+								"{{base_url_v1API}}"
+							],
+							"path": [
+								"notes",
+								"owned",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new note",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Ajoyib Titul\",\r\n    \"subtitle\": \"Va unga mos subtitl\",\r\n    \"body\": \"Bu yerda katta matn bo'lishi kerak, lekin u yo'q...\",\r\n    \"is_public\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_v1API}}/notes/",
+							"host": [
+								"{{base_url_v1API}}"
+							],
+							"path": [
+								"notes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrive single note",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_v1API}}/notes/1",
+							"host": [
+								"{{base_url_v1API}}"
+							],
+							"path": [
+								"notes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update note",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"body\": \"Now this is changed main body :)\",\r\n    \"is_public\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_v1API}}/notes/3",
+							"host": [
+								"{{base_url_v1API}}"
+							],
+							"path": [
+								"notes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Destroy note",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_v1API}}/notes/4",
+							"host": [
+								"{{base_url_v1API}}"
+							],
+							"path": [
+								"notes",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_v1API}}/logout",
+							"host": [
+								"{{base_url_v1API}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMGFlMDZkNDQ3OTU3Y2M3YWI4ZjNjZjdlZTMxOWRhOTFiOWE3ZGI5NWRhZWZmYjYzY2MyMzgzNTg0NzNlMGY0OTk3MmM4MDkyOGRlMjU3NDAiLCJpYXQiOjE2NTU4NzQ4NzQuNzAzNjgsIm5iZiI6MTY1NTg3NDg3NC43MDM2ODQsImV4cCI6MTY4NzQxMDg3NC42OTU1MTYsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.iU6qmdHvsNuXOksOs1KOmsv8fyue-tm0impUiR_Fs1oAY8q9k8Nory5is7DID_s6qBSEcWe6L5Sx_Xu6V1qeoC30k4WWIzZgRx0aaR6c3HLcHDh_Y-QhGhErhxHiO4QjWJlgl0HaqW52YOG3uXm6MLNh9VXldNm4utf8YEHHl8H5x_-fUcIMGvvjN_Hy9DYzqIcfNDRcTorhTiuXh-eiNb9Vc94IiTIWBDUChathlhtnly1tNdR58YJHObZy4xRGnWnY7B5wySKo62SMmV7--Ov055pkzhmIC9KBz36hnKNqcWC9dntymuDW9MH7ZhEqKp8BytNn2fWjRtZp2EEDPFA8x7JV7Hpaww83CTzkc-hVN4DsPO-c9XtaLTnAcqTDqSkJRVHjAR5WHxl-FffaMUYjv1jOjean7JyfRRL8r0ZFf5-zFIl9Mrfw5tsSA4-NN0dly9CBAGS1befwdlmfEw5IrCMOVggtVM-8xsjO6VxrMe0I3V0q_fxOVrIuZAYc5inI9KrJlESfZbgPCjN8g_tBu1wCviOCFU3N3mP-rAtyl-in96Ixt3JeMIXiuB8w-Ah3BX3hc2HlEfQ31nq_VOfpEoo4dDAAHiImqwQkar0XRtcr6Zn7GceKad3NZo2HvlmTKV0Y1CbcdDltODQ89xRcSSn_edjaf6lv-jU8zsM",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url_v1API",
+			"value": "127.0.0.1:8000/api/v1"
+		}
+	]
+}
